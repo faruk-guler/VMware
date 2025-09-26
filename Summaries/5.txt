@@ -1,0 +1,70 @@
+
+==================================================
+
+1. ESXi Host Yapılandırması
+
+- ESXi Host TL (Top Level) → 4 adet host: Host1, Host2, Host3, Host4
+- Her host, Distributed Switch (Dist-Switch) üzerinden yönetilir.
+- VM’ler — Segulanto (muhtemelen “Segregation” veya “Segmentation” anlamında) ile ayrılmıştır.
+
+2. VM ve Network Yapısı
+
+- VM’ler, Distributed Switch’e bağlanır.
+- Dist-Switch, tüm host’lara ortak ağ bağlantısı sağlar.
+- Her host’ta aynı port group’lar ve VLAN yapılandırmaları bulunur.
+
+3. vCenter ve NSX Entegrasyonu
+
+- vCenter Server, NSX Manager ile entegre çalışır.
+- NSX Manager, sanal ağların merkezi yönetimini sağlar.
+- NSX, distributed firewall, logical switch, routing gibi özellikler sunar.
+
+4. VMkernel Portları (vmk)
+
+- vmk0 → Management (Yönetim ağı)
+- vmk1 → vMotion (VM taşıma)
+- vmk2 → iSCSI / NFS (Depolama)
+- vmk3 → FT Logging (Fault Tolerance)
+- vmk4 → VSAN (Eğer kullanılıyorsa)
+
+5. VMware HCIA (Host Cluster Infrastructure Architecture)
+
+- HCIA, ESXi host’ların cluster içindeki ağ yapılandırmasını ifade eder.
+- Her host’un 2 adet fiziksel NIC’i vardır:
+   - Vmnic0 ve Vmnic1 → VMware HCIA için kullanılır (Management, vMotion vs.)
+   - Vmnic2 ve Vmnic3 → Fiziksel adaptör (Uplink) olarak kullanılır.
+
+6. NSX Uplink Konfigürasyonu
+
+- NSX, her host’ta 2 adet uplink port kullanır:
+   - Vmnic2 → 10 Gbps
+   - Vmnic3 → 10 Gbps
+- Bu portlar, fiziksel switch’e bağlanır — trunk modda çalışır.
+- NSX, bu uplink’leri kullanarak overlay network (VXLAN) oluşturur.
+
+7. Bookben (Muhtemelen "Bookshelf" veya "Backup" anlamında)
+
+- Sanal makinelerin yedeklenmesi için kullanılan bir yapıdır.
+- NSX ile entegre olursa, mikro-segmentasyonla birlikte güvenlik politikaları uygulanabilir.
+
+8. Standard Switch vs. Distributed Switch
+
+- Standard Switch → Her host’ta ayrı ayrı konfigüre edilir — önerilmez.
+- Distributed Switch → Merkezi yönetim — tüm host’larda aynı yapıyı sağlar.
+- Not: “Standard Switch birde yok!” → Yani production ortamlarda distributed switch kullanılmalıdır.
+
+9. Ağ Tipleri ve Kullanım Alanları
+
+- Management Network → vCenter ve ESXi yönetim trafiği
+- vMotion Network → VM’lerin canlı taşınması
+- iSCSI/NFS Network → Depolama trafiği
+- FT Logging Network → Fault Tolerance log trafiği
+- VSAN Network → Eğer VSAN kullanılıyorsa
+
+10. Fiziksel Adaptörler ve Uplink
+
+- Fiziksel adaptörler (Vmnic), sanal switch’e uplink olarak bağlanır.
+- Uplink portlar, fiziksel switch’e bağlanır — trunk modda çalışmalıdır.
+- NSX ile entegre olduğunda, bu uplink’ler overlay network (VXLAN) için kullanılır.
+
+==================================================
