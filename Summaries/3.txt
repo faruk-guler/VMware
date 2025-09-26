@@ -40,7 +40,7 @@ Consolidate (Birleştirme)
 - “Consolidate” butonu ile manuel olarak başlatılabilir.
 - Snapshot’ları silmeden önce mutlaka consolidate yapılmalıdır — aksi halde veri kaybı riski vardır.
 
-kAykırı Verme (Resource Allocation — RAM, CPU, Disk)
+Kaynak Verme (Resource Allocation — RAM, CPU, Disk)
 - Sanal makinelere kaynak (RAM, CPU, disk) tahsisi yapmak için kullanılır.
 - VMware Tools yüklüyse, balloon driver ile RAM geri kazanımı yapılabilir.
 - Balloon driver, guest OS’ten bellek talep ederek, host’un gereksinim duyduğu belleği geri alır.
