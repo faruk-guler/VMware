@@ -1,10 +1,5 @@
 # Virtual Machine Files
 
-
-> [vm] ────► [VM Folder]
-> │
-> ▼
-
 A virtual machine (VM) is stored as a set of files within a **VM folder**. Key files include:
 
 - **Configuration file** → `VM_name.vmx` ✅  
