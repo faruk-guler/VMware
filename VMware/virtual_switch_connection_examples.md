@@ -3,7 +3,7 @@
 
 - Her ağ trafiği türü için **ayrı bir sanal switch** oluşturulur.
 - **Avantajlar**:
-  - Trafik隔离 (isolation) → Güvenlik artar.
+  - Trafik(isolation) → Güvenlik artar.
   - Performans optimizasyonu → Örneğin, iSCSI trafiği diğer trafiğe karışmaz.
   - Yönetilebilirlik → Hata ayıklama ve izleme daha kolay.
 - **Dezavantaj**: Daha fazla ağ adaptörü ve konfigürasyon gerektirir.
