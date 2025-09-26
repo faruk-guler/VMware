@@ -12,13 +12,9 @@ VMware Tools, sanal makine performansını artıran bir dizi özelliktir.
   - Sync driver for quiescing I/O
 
 - **Increased graphics performance**
-
 - **Improved mouse performance**
-
 - **Guest OS heartbeat service**
-
 - **Time synchronization**
-
 - **Ability to shut down the VM**
 
 > © 2021 VMware, Inc.
