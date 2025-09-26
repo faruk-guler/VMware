@@ -1,0 +1,66 @@
+
+==================================================
+
+Guest OS Customization (Konuk İşletim Sistemi Özelleştirme)
+- vSphere Sysprep ile yapılır.
+- Windows VM’lerde otomatik IP ataması, domain join, kullanıcı oluşturma gibi işlemler için kullanılır.
+- Linux VM’lerde ise cloud-init veya benzeri araçlarla özelleştirme yapılır.
+
+Policies and Profiles (Politikalar ve Profiller)
+- Template üzerinden VM oluştururken uygulanacak politikaları belirler.
+- Örnek: Otomatik IP ataması, domain ekleme, güvenlik ayarları vs.
+- Profil, template’in yapılandırılmasını standartlaştırır — tekrarlanabilirlik sağlar.
+
+Content Libraries (İçerik Kütüphaneleri)
+- Template’leri, ISO dosyalarını, скриптleri ve diğer içerikleri merkezi bir yerde saklamak için kullanılır.
+- 3 Modu vardır:
+   1. Local Mode — Yalnızca yerel vCenter’e ait içerikler.
+   2. Published Mode — Başka vCenter’lara paylaşılan içerikler.
+   3. Subscribe Mode — Dış kaynaklardan içerik almak için kullanılır.
+
+Datastore Inflate (Veri Depolama Şişirme)
+- Thin Provisioning ile oluşturulmuş disklerin, gerçek boyutuna (Thick) çevrilmesidir.
+- Disk alanı tamamen tahsis edilir — performans artışı sağlayabilir ama disk kullanımı artar.
+- Genellikle veri depolama optimizasyonu veya yedekleme öncesi yapılır.
+
+VM Options (VM Seçenekleri)
+- Sanal makinenin davranışını kontrol eden ayarlardır.
+- Örnek: BIOS ayarları, CPU/RAM sınırları, snapshot yönetimi, boot sırası vs.
+- Bu ayarlar, VM’in “Edit Settings” kısmından değiştirilebilir.
+
+Snapshot
+- VM’in belirli bir anındaki durumunu (RAM, disk, konfigürasyon) kaydetmek için kullanılır.
+- ESX/ESXi makinelerinde maksimum 32 adet snapshot alınabilir.
+- Normal modda snapshot, disk değişikliklerini ayrı dosyalarda tutar — delta diskler.
+- Snapshot’lar çok fazla kullanılırsa performans düşüşüne neden olur — düzenli temizlik önerilir.
+
+Consolidate (Birleştirme)
+- Snapshot’ların birleştirilmesi işlemidir.
+- Özellikle snapshot’lar silinmeden önce, değişiklikleri ana disk dosyasına yazmak için yapılır.
+- “Consolidate” butonu ile manuel olarak başlatılabilir.
+- Snapshot’ları silmeden önce mutlaka consolidate yapılmalıdır — aksi halde veri kaybı riski vardır.
+
+kAykırı Verme (Resource Allocation — RAM, CPU, Disk)
+- Sanal makinelere kaynak (RAM, CPU, disk) tahsisi yapmak için kullanılır.
+- VMware Tools yüklüyse, balloon driver ile RAM geri kazanımı yapılabilir.
+- Balloon driver, guest OS’ten bellek talep ederek, host’un gereksinim duyduğu belleği geri alır.
+- Disk ve CPU da benzer şekilde limit, reservation, shares gibi ayarlarla yönetilir.
+
+Ballooning
+- Host’un RAM’ine ihtiyaç duyduğunda, guest OS’ten bellek geri almak için kullanılan mekanizmadır.
+- VMware Tools yüklü olmalı — balloon driver aktif olmalı.
+- Guest OS, bellek kullanımını azaltır — sistem yavaşlayabilir.
+- Diğer sanal makineler daha fazla bellek kullanabilir hale gelir.
+
+Virtual CPU (vCPU) Hesaplama
+
+Sanal CPU sayısı = (Socket × Core per Socket) × vCPU başına fiziksel CPU oranı
+
+Örnek formül:
+
+Socket × Virtual CPU = (2 socket + x10 vCPU)
+
+> Not: vCPU sayısının fiziksel çekirdek sayısını aşmaması önerilir — aksi halde performans düşüşü yaşanır.
+> İdeal oran: 1 fiziksel core = 1-2 vCPU (yüksek performanslı uygulamalarda 1:1 önerilir).
+
+==================================================
