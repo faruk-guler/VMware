@@ -1,8 +1,18 @@
-- Server  
-  - vSphere  
-- Network  
-  - NSX  
-- Storage  
-  - vSAN / vVOL  
-- Desktop  
-  - Horizon  
++-------------------------+
+|   Server Virtualization | <-- vSphere
++-------------------------+
+              |
+              v
++-------------------------+
+|  Network Virtualization | <-- NSX
++-------------------------+
+              |
+              v
++-------------------------+
+|  Storage Virtualization | <-- vSAN / vVOL
++-------------------------+
+              |
+              v
++-------------------------+
+|  Desktop Virtualization | <-- Horizon
++-------------------------+
