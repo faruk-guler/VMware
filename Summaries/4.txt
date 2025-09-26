@@ -1,0 +1,59 @@
+
+==================================================
+
+ESXTOP
+
+- ESXi komut satırında çalışan gerçek zamanlı izleme aracıdır.
+- CPU, RAM, Disk, Ağ gibi kaynak kullanımını gösterir.
+- Komut: `esxtop`
+  - Yardım için: `help` veya `h` — hangi tuşların ne işe yaradığını gösterir.
+  - VM’lerin içindeki izleme için: `esxtop -v` → “Vmonly” modu aktif olur.
+
+DRS (Distributed Resource Scheduler)
+
+- Her 5 dakikada bir otomatik olarak VM’leri dengeler — yükü düşük hostlara taşır.
+- Aktivasyon seviyesi (Automation Level):
+   1. Manual — Tavsiye verir, kullanıcı onaylar.
+   2. Partially Automated — Bazı işlemler otomatiktir.
+   3. Fully Automated — Tam otomatik — VM’ler sürekli dengelenir.
+- Migration Threshold (Taşıma Eşiği): 
+   - 1 (Konservatif) → Az taşıma
+   - 5 (Agresif) → Daha sık taşıma yapar — performans için önerilir.
+- DRS Predictive (Öngören DRS): vRealize Operations ile entegre çalışarak gelecekteki yükü tahmin eder ve önceden hareket eder.
+
+VM/Host Rules (VM/Host Kuralları)
+
+- VM’lerin hangi host’larda çalışması gerektiğini belirleyen politikalardır.
+- Örnek:
+   - Affinity Rule → Belirli VM’ler aynı host’ta çalışmalı.
+   - Anti-Affinity Rule → Belirli VM’ler farklı host’larda çalışmalı.
+- Bu kurallar, DRS tarafından uygulanır — özellikle yüksek kullanılabilirlik veya güvenlik nedeniyle kullanılır.
+
+HA (High Availability) Configured
+
+- HA etkinleştirildiğinde, her host’un üzerinde bir “agent” çalışır.
+- Eğer bir host çökerse, diğer host’lar o host’taki VM’leri yeniden başlatır.
+- HA’nın çalışması için en az 3 host gerekir — 2 host’ta witness node gereklidir.
+
+Do Active HA
+
+- Active HA, host’un çökmeden önce potansiyel sorunları tespit edip VM’leri güvenli bir host’a taşıyan gelişmiş bir mekanizmadır.
+- Örnek: Host sıcaklığı artıyor → VM’ler başka host’a taşınır.
+- Bu özellik, vSphere 7+ ile birlikte gelir — gerekli lisansla aktif edilir.
+
+Fault Tolerance (FT)
+
+- VM’yi tam olarak iki kopyasında çalıştıran özellik — biri active, diğeri passive.
+- Passive VM, active VM’in tüm işlemleri anlık olarak takip eder.
+- Eğer active VM çökerse, passive anında aktif olur — kesintisiz çalışma sağlanır.
+- FT, tek bir VM için 8 vCPU’a kadar desteklenir.
+- Sadece ESXi 6.5+ ve vCenter Server ile çalışır.
+
+Lifecycle Manager
+
+- Host’ların patch yönetimi, sürüm güncellemesi ve konfigürasyon yönetimi için kullanılan araçtır.
+- vCenter Server üzerinden çalışır — merkezi yönetim sağlar.
+- Özellikle büyük ortamlarda kritik öneme sahiptir — manuel güncelleme yerine otomasyon sunar.
+- vSphere 7+ ile birlikte "Image Builder" ve "Update Manager" ile entegre çalışır.
+
+==================================================
