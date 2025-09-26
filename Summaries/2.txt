@@ -1,0 +1,62 @@
+==================================================
+Sanal Switchler
+
+1) Standard Switch = Host Level Switch
+   - Her ESXi host üzerinde tek tek yapılandırılır.
+   - Yönetimi lokaldir — her host için ayrı ayrı yapılır.
+
+2) Distributed Switch = Datacenter Level Switch
+   - vCenter üzerinden merkezi yönetilir.
+   - Birden fazla host’u kapsayan tek bir sanal switch yapısıdır.
+   - Ağ politikaları, VLAN, QoS gibi ayarlar merkezden uygulanır.
+
+Bu switchler içindeki bileşenler:
+
+VMnic (Virtual Machine Network Interface Card)
+- Fiziksel sunucunun fiziksel ağ adaptörüdür (Ethernet kartı).
+- Örnek üreticiler: Intel, Broadcom, Mellanox, Atheros vs.
+- Uplink görevi görür — sanal switch’in fiziksel ağa bağlanmasını sağlar.
+
+Uplink Port
+- Sanal switch’in fiziksel NIC’lere (VMnic) bağlantı noktalarıdır.
+- VMnic → Uplink Port → Sanal Switch bağlantısı bu şekilde kurulur.
+
+VNic (Virtual NIC)
+- Sanal makinenin ağ arabirimidir.
+- Sanal makine, port group üzerinden sanal switch’e bağlanır.
+- VNic, sanal switch’in bir parçasıdır — fiziksel NIC’e doğrudan bağlı değildir.
+
+Port Group
+- Sanal makinelerin bağlanabileceği mantıksal ağ segmentidir.
+- Aynı port group’a bağlanan VM’ler aynı VLAN ve güvenlik politikasını paylaşır.
+- Her ESXi host’ta aynı isimde port group olmalı — distributed switch ile bu otomatikleşir.
+
+VM Kernel Port (vmk)
+- ESXi host’un kendisi için kullanılan ağ portudur.
+- vMotion, Management, iSCSI, NFS gibi servisler bu portlar üzerinden çalışır.
+- Örnek: vmk0 → Management, vmk1 → vMotion
+- ESXi host’un kendisi de bu portlar üzerinden ağ bağlantısı kurar.
+- vMotion yapıldığında, ESXi host’lar arası iletişim vmkernel portları üzerinden yapılır.
+
+Ağ Konfigürasyon Akışı (Standard Switch)
+
+VM → Port Group → Virtual Switch → Uplink → Fiziksel NIC → İstemciler
+
+(Not: Distributed Switch’te bu akış merkezi yönetilir — tüm host’larda aynı yapıya sahiptir.)
+
+VVOL (Virtual Volumes)
+
+- 64 TB’ye kadar disk alanı destekler — eski limit 2 TB idi.
+- Depolama sistemiyle entegre çalışır — storage array tarafından yönetilir.
+- VM seviyesinde depolama politikaları uygulanabilir (QoS, snapshot, replication).
+
+Extend (Genişletme)
+- Yeni disk alanı eklemektir — örneğin 100 GB’lık disk 150 GB’a çıkarılır.
+- Extend limiti: 32 TB’dır (vSphere 7+ ile artmıştır).
+
+Expand (Genişletme / Arttırma)
+- Disk alanı artırılırken, işletim sistemi tarafında da boyutun tanınması gerekir.
+- Örnek: Windows’ta disk yönetimi ile partition genişletilmeli.
+- Expand işlemi, disk boyutunu artırmakla sınırlı değildir — işletim sistemi tarafında da güncellenmelidir.
+
+==================================================
