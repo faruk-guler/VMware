@@ -1,3 +1,8 @@
-| Server  | Network | Storage   | Desktop |
-|---------|---------|-----------|---------|
-| vSphere | NSX     | vSAN/vVOL | Horizon |
+- Server  
+  - vSphere  
+- Network  
+  - NSX  
+- Storage  
+  - vSAN / vVOL  
+- Desktop  
+  - Horizon  
