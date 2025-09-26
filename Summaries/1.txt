@@ -1,1 +1,82 @@
-#
+
+==================================================
+
+SWAP NEDIR?
+
+- RAM’in yeterli olmadığı durumlarda, sistem belleği (RAM) dışına taşan verilerin geçici olarak diskte saklandığı alandır.
+- Swap dosyası, VM’nin RAM miktarına göre oluşturulur.
+  Örnek: 10 GB RAM → 10 GB Swap
+
+SWAP DOSYASININ KONUMU
+
+- Swap dosyası, VM’nin bulunduğu cluster’da otomatik olarak oluşturulur.
+- Her VM için ayrı bir swap dosyası oluşturulur.
+- Az miktarda RAM’e sahip VM’lerde daha az disk alanı kullanılır.
+- Swap dosyası, VM’nin kapandığında veya taşındığında silinir.
+
+RESERVATION (REZERVASYON)
+
+- VM’ye sabit olarak ayrılmış RAM miktarıdır.
+- Bu miktar, VM başlatıldığında her zaman mevcut olmak zorundadır.
+- Rezervasyon yapılmazsa, VM’ye RAM dinamik olarak atanır.
+
+POWER COMMIT (GUC TAAHHUDU)
+
+- VM’ye ayarlanan CPU miktarı, fiziksel CPU (Core = Logical CPU) üzerinde ne kadar yer tutacağını belirtir.
+- Örnek: 4 vCPU’luk bir VM, 4 fiziksel çekirdeğe karşılık gelir.
+
+CPU & RAM HESAPLAMASI
+
+1. Storage vMotion ile Disk Formatı Değişimi
+   - VMware vSphere 6.x’ten itibaren Storage vMotion işlemleri sırasında
+     disk formatı değiştirilebilir.
+   - Örnek: Thin disk → Thick disk veya tam tersi.
+
+2. vCenter 7 ile Gelen Özellikler
+   - SSO Domain Entegrasyonu: vCenter Server, SSO domain ile entegre edilebilir.
+   - Enhanced Link Mode: Birden fazla vCenter Server’ın tek bir arayüzden yönetilmesini sağlar.
+     (Not: Sistem yöneticisi tarafından aktif edilmelidir — varsayılan olarak kapalıdır.)
+
+VAMI (vCenter Appliance Management Interface)
+
+- vCenter Server Appliance (VCSA) için web tabanlı yönetim arayüzüdür.
+- URL: https://<vcenter-ip>:5480
+- Kullanıcı: root veya admin (kuruluma göre değişir)
+- İşlevleri:
+    - vCenter konfigürasyonu
+    - Backup & Restore
+    - Update & Upgrade
+    - Log görüntüleme
+    - Sertifika yönetimi
+
+vCenter BACKUP & RESTORE
+
+- Yedekleme işlemi, konfigürasyon ve veriyi kapsar.
+- Geri yükleme işlemi, sadece aynı vCenter versiyonuna yapılabilir.
+  Örnek: vCenter 7.0 yedeği, sadece vCenter 7.0 üzerine geri yüklenir.
+- Lisans, backup/restore işleminden sonra yeniden aktive edilmelidir.
+
+vCenter UPGRADE
+
+- vCenter Server Appliance (VCSA) için güncelleme işlemi:
+    - Web arayüz üzerinden (https://<vcenter-ip>:5480) yapılır.
+    - Veya CD-ROM üzerinden lokal olarak update file ile yapılabilir.
+- Güncelleme sırasında servis kesintisi olur — planlı bakım gerektirir.
+
+WITNESS NEDIR?
+
+- vCenter HA (High Availability) yapısında kullanılan bir bileşendir.
+- vCenter HA, üç düğümden oluşur:
+    1. Active — Aktif çalışan vCenter
+    2. Passive — Pasif/standby vCenter
+    3. Witness — Oylama ve karar verme işlevi görür (küçük bir VM)
+
+- Witness, Active ve Passive arasında eşitlik durumunda karar vermek için kullanılır.
+
+NETWORK VIRTUALIZATION
+
+- VMware NSX gibi çözümlerle sanal ağ oluşturulur.
+- Notlarda geçen "Sound Switchler" ifadesi muhtemelen "Standard Switch" (vSwitch) kelimesinin yanlış yazılmış halidir.
+- Doğru terimler: Standard Virtual Switch (vSS) veya Distributed Virtual Switch (vDS).
+
+==================================================
