@@ -33,11 +33,3 @@
 
 ---
 
-✅ **Dosya adı önerisi:**  
-👉 `vmware_virtual_switch_connection_examples.md`
-
----
-
-📌 Bu içerik, VMware vSphere’da ağ mimarisini planlamak isteyen sistem yöneticileri, mimarlar ve VCP/VCAP adayları için çok değerlidir. Özellikle **ağ izolasyonu** ve **performans optimizasyonu** konularında temel bilgi sağlar.
-
-İstersen bu yapıyı VLAN, NIC teaming veya NSX ile genişletebilirim.
