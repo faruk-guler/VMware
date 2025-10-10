@@ -25,6 +25,7 @@ VMware vCenter Server 8.0.x
 
 https://knowledge.broadcom.com/external/article?legacyId=57829
 https://knowledge.broadcom.com/external/article/318803/file-system-storagearchive-is-low-on-sto.html
+https://knowledge.broadcom.com/external/article/389313/the-full-storagearchive-partition-causes.html
 
 # Resolution
 1. Take a snapshot of the vCenter Server Appliance
