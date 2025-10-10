@@ -1,6 +1,3 @@
-Warning This object (VMware vCenter Server Appliance) Guest disk space
-Warning Disk "/storage/archive"
-
 Alarm Details
 Description
 State of virtual machine equals "Running"
@@ -11,6 +8,9 @@ Cause
 Guest OS free disk space value has dropped below the configured threshold
 Resolution
 Increase disk space and extend guest OS volume, or free up some disk space by removing unused programs or files. For Windows guests, you can use Disk Cleanup Wizard
+
+* Warning This object (VMware vCenter Server Appliance) Guest disk space
+* Warning Disk "/storage/archive"
 
 # Environment
 VMware vCenter Server Appliance 6.7.x
