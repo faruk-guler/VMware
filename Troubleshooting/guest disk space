@@ -17,6 +17,10 @@ VMware vCenter Server Appliance 6.7.x
 VMware vCenter Server 7.0.x
 VMware vCenter Server 8.0.x
 
+# Cause
+This issue does not affect any operations of vCenter Server as the /storage/archive partition can be full by design.
+This volume stores as much WAL history as possible, and is automatically cleaned up by the archiver service by automatically removing the oldest WAL segments.
+
 # Impact/Risks:
 - This issue is an erroneous alarm that does not affect the operations of vCenter Server.
 - There is no impact to the vCenter Server
