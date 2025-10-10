@@ -56,4 +56,3 @@ Note:
 # What next?
 If you don't want to see any alerts in Veeam ONE, then disable the alert.
 If disk fullness is preventing upgrades/backups, then expand the disk or clean up old WAL files.
-
