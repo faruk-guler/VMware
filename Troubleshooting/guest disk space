@@ -38,6 +38,7 @@ shell.set --enabled true
 6. Add a line as below:
 0 23 * * * find /storage/archive/vpostgres/ -mtime +300 | xargs rm
 7. Press Esc button, type :wq to quit
+
 Note: 
 1. The above command removes old WAL segments files that are older than 300 days, and the job will be executed daily at 23:00. Either the 300-day or the 23:00 execution time can be modified according to the customer's requirements or environments.
 2. For vCenter upgrades, if the process does not succeed, this change may need to be reverted or redeployed.
