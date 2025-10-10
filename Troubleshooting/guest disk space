@@ -1,4 +1,5 @@
 Alarm Details
+
 Description
 State of virtual machine equals "Running"
 Amount of free disk space "/storage/archive" (6.6%) is below a defined threshold (10.0%). Current free disk space is 6.46 GB.
