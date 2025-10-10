@@ -12,10 +12,16 @@ Guest OS free disk space value has dropped below the configured threshold
 Resolution
 Increase disk space and extend guest OS volume, or free up some disk space by removing unused programs or files. For Windows guests, you can use Disk Cleanup Wizard
 
-https://knowledge.broadcom.com/external/article?legacyId=57829
-Impact/Risks:
+# Environment
+VMware vCenter Server Appliance 6.7.x
+VMware vCenter Server 7.0.x
+VMware vCenter Server 8.0.x
+
+# Impact/Risks:
 - This issue is an erroneous alarm that does not affect the operations of vCenter Server.
 - There is no impact to the vCenter Server
 - If on vCenter 6.7 version less than U1b - you can safely ignore the alarm.
 - There will be no alarm even if partition is 100% full - as this is by design, and has no impact on the running of the vCenter.
+
+https://knowledge.broadcom.com/external/article?legacyId=57829
 
