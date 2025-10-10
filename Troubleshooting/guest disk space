@@ -26,3 +26,22 @@ VMware vCenter Server 8.0.x
 https://knowledge.broadcom.com/external/article?legacyId=57829
 https://knowledge.broadcom.com/external/article/318803/file-system-storagearchive-is-low-on-sto.html
 
+# Resolution
+1. Take a snapshot of the vCenter Server Appliance
+2. SSH into the vCenter Server Appliance
+3. Run the following command to enable access to the Bash shell:
+shell.set --enabled true
+4. Type shell and press Enter
+5. In vCenter shell command line, run below command:
+# crontab -e
+6. Add a line as below:
+0 23 * * * find /storage/archive/vpostgres/ -mtime +300 | xargs rm
+7. Press Esc button, type :wq to quit
+Note: 
+1. The above command removes old WAL segments files that are older than 300 days, and the job will be executed daily at 23:00. Either the 300-day or the 23:00 execution time can be modified according to the customer's requirements or environments.
+2. For vCenter upgrades, if the process does not succeed, this change may need to be reverted or redeployed.
+
+# Son olarak
+Sadece Veeam ONE’da uyarı görmek istemiyorsanız → Alarmı hariç tutun.
+Disk doluluğu upgrade/backup gibi işlemleri engelliyorsa → Disk genişletin veya eski WAL dosyalarını temizleyin.
+
