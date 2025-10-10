@@ -8,3 +8,5 @@ Cause
 Guest OS free disk space value has dropped below the configured threshold
 Resolution
 Increase disk space and extend guest OS volume, or free up some disk space by removing unused programs or files. For Windows guests, you can use Disk Cleanup Wizard
+
+
