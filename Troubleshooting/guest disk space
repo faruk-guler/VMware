@@ -1,0 +1,10 @@
+Alarm Details
+Description
+State of virtual machine equals "Running"
+Amount of free disk space "/storage/archive" (6.6%) is below a defined threshold (10.0%). Current free disk space is 6.46 GB.
+Knowledge
+Guest OS volume is low on available guest disk space
+Cause
+Guest OS free disk space value has dropped below the configured threshold
+Resolution
+Increase disk space and extend guest OS volume, or free up some disk space by removing unused programs or files. For Windows guests, you can use Disk Cleanup Wizard
