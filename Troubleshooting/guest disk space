@@ -24,4 +24,5 @@ VMware vCenter Server 8.0.x
 - There will be no alarm even if partition is 100% full - as this is by design, and has no impact on the running of the vCenter.
 
 https://knowledge.broadcom.com/external/article?legacyId=57829
+https://knowledge.broadcom.com/external/article/318803/file-system-storagearchive-is-low-on-sto.html
 
