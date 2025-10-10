@@ -29,6 +29,7 @@ https://knowledge.broadcom.com/external/article/318803/file-system-storagearchiv
 https://knowledge.broadcom.com/external/article/389313/the-full-storagearchive-partition-causes.html
 https://blogs.vmware.com/cloud-foundation/2023/04/06/how-to-remove-old-archive-files-in-vmware-vcenter-server-appliance/
 https://kadirkozan.com.tr/vcenter-server-appliance-8-x-uzerinde-storage-archive-disk-genisletme-rehberi/
+https://medium.com/@lubomir-tobek/archive-files-in-vmware-vcenter-server-80c1a193f4fe
 
 # Resolution
 1. Take a snapshot of the vCenter Server Appliance
