@@ -17,4 +17,5 @@ Impact/Risks:
 - This issue is an erroneous alarm that does not affect the operations of vCenter Server.
 - There is no impact to the vCenter Server
 - If on vCenter 6.7 version less than U1b - you can safely ignore the alarm.
+- There will be no alarm even if partition is 100% full - as this is by design, and has no impact on the running of the vCenter.
 
