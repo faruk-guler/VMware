@@ -1,3 +1,6 @@
+Warning This object (VMware vCenter Server Appliance) Guest disk space
+Warning Disk "/storage/archive"
+
 Alarm Details
 Description
 State of virtual machine equals "Running"
