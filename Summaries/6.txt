@@ -1,0 +1,28 @@
+==================================================
+OTOMASYON, İZLEME VE YAKIN GELECEK REHBERİ (14-18)
+
+1. POWERCLI VE OTOMASYON
+- PowerShell tabanlı yönetim aracıdır.
+- Get-VM, Start-VM, New-Snapshot gibi komutlarla binlerce VM saniyeler içinde yönetilir.
+- "Connect-VIServer" ile vCenter'a bağlanılır.
+
+2. İZLEME (MONITORING)
+- CPU Ready: %5 altı - İyi, %10 üstü - Kritik.
+- Disk Latency: 20ms altı - İyi, 50ms üstü - Performans sorunu.
+- SNMP: Dış izleme araçları (Zabbix, PRTG) için gereklidir.
+
+3. UPGRADE SIRALAMASI
+- KRİTİK SIRA: 1. vCenter -> 2. ESXi -> 3. VM Tools -> 4. VM Hardware.
+- vCenter Upgrade iki aşamalıdır (Stage 1: Deployment, Stage 2: Data Migration).
+
+4. vSAN DEEP DIVE
+- Yerel disklerden paylaşımlı depolama oluşturur.
+- Disk Grubu = 1 Cache Disk (Hızlı) + 1-7 Capacity Disk.
+- FTT (Failures to Tolerate): Kaç host kaybına dayanılacağını belirler.
+
+5. SITE RECOVERY MANAGER (SRM)
+- Felaket Kurtarma (DR) orkestrasyon aracıdır.
+- RPO: Veri kaybı toleransı.
+- RTO: Sistemin ayağa kalkma süresi.
+- Recovery Plan: Senaryo bazlı otomatik kurtarma planı.
+==================================================

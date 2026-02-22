@@ -59,4 +59,8 @@ Expand (Genişletme / Arttırma)
 - Örnek: Windows’ta disk yönetimi ile partition genişletilmeli.
 - Expand işlemi, disk boyutunu artırmakla sınırlı değildir — işletim sistemi tarafında da güncellenmelidir.
 
+STORAGE DRS & SIOC
+- Storage DRS: Datastore'lar arası yük dengeleme (Alan ve I/O).
+- SIOC: VM'lerin depolama trafiğini önceliklendirme (I/O Kontrolü).
+
 ==================================================

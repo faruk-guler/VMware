@@ -12,7 +12,10 @@ SWAP DOSYASININ KONUMU
 - Swap dosyası, VM’nin bulunduğu cluster’da otomatik olarak oluşturulur.
 - Her VM için ayrı bir swap dosyası oluşturulur.
 - Az miktarda RAM’e sahip VM’lerde daha az disk alanı kullanılır.
-- Swap dosyası, VM’nin kapandığında veya taşındığında silinir.
+- Swap dosyası, VM’den kapandığında veya taşındığında silinir.
+
+HYBRID CLOUD (VMC)
+- vSphere'in AWS, Azure ve Google Cloud üzerinde çalışan hibrit bulut versiyonudur.
 
 RESERVATION (REZERVASYON)
 
@@ -73,10 +76,13 @@ WITNESS NEDIR?
 
 - Witness, Active ve Passive arasında eşitlik durumunda karar vermek için kullanılır.
 
+vCENTER HIGH AVAILABILITY (VCHA)
+- 3 Node: Active, Passive, Witness.
+- Kesintisiz vCenter yönetimi sağlar. Failover süresi < 5 dk.
+
 NETWORK VIRTUALIZATION
 
 - VMware NSX gibi çözümlerle sanal ağ oluşturulur.
-- Notlarda geçen "Sound Switchler" ifadesi muhtemelen "Standard Switch" (vSwitch) kelimesinin yanlış yazılmış halidir.
 - Doğru terimler: Standard Virtual Switch (vSS) veya Distributed Virtual Switch (vDS).
 
 ==================================================

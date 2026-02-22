@@ -36,3 +36,8 @@ vSphere ağ yapısı, fiziksel NIC'lerin sanal dünyaya aktarılmasını ve traf
   - *MAC Address Changes:* Reject
   - *Forged Transmits:* Reject
 - **Jumbo Frame:** Depolama ve vMotion ağlarında MTU 9000 kullanarak paket başlığı yükünü azaltın.
+
+## 5. Ağ Sanallaştırmasının Geleceği: VMware NSX
+vSphere ağ yapısının üzerine kurulan NSX, "Software-Defined Networking" (SDN) imkanı sağlar:
+- **Mikro-Segmentasyon:** VM seviyesinde firewall kuralları ile lateral (doğu-batı) trafiği korur.
+- **Logical Switching:** Fiziksel ağdan bağımsız sanal katman 2 ağları oluşturur.

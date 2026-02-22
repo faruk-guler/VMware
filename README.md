@@ -6,7 +6,7 @@ Bu proje, kurumların veri merkezlerinde kullandığı **VMware vSphere** ekosis
 
 ## 🏗 Proje Kapsamı ve Detaylı Teknik Modüller
 
-Proje, birbirini tamamlayan 13 stratejik modülden oluşmaktadır. Her bir modül, vSphere altyapısının farklı bir kritik alanına odaklanmaktadır:
+Proje, birbirini tamamlayan 26 stratejik modülden oluşmaktadır. Her bir modül, vSphere altyapısının farklı bir kritik alanına odaklanmaktadır:
 
 ### 1. Mimari ve Temel Kavramlar (Introduction)
 Modern veri merkezlerinin "Software-Defined Data Center" (SDDC) vizyonundaki VMware katmanlarını inceler. ESXi hypervisor yapısı, vCenter Server'ın yönetimsel rolü ve vSphere Client'ın hiyerarşisi burada detaylandırılır. Sistemdeki katmanlar arasındaki veri akışını anlamak için temel oluşturur.
@@ -46,6 +46,45 @@ VADP API mimarisi, Changed Block Tracking (CBT) teknolojisi ve felaket kurtarma 
 
 ### 13. Lisanslama ve Stratejik Seçimler
 Broadcom sonrası değişen vSphere lisanslama modellerini, farklı sürümler (Standard vs Enterprise Plus) arasındaki özellik farklarını ve işletmenin ihtiyacına en uygun paketin nasıl seçileceğini detaylandırır.
+
+### 14. Otomasyon ve PowerCLI
+Sistem yönetimini PowerShell üzerinden otomatize etmek için PowerCLI kurulumu, temel komut setleri ve örnek script senaryolarını içerir.
+
+### 15. Monitoring ve İzleme
+vCenter alarmları, kritik performans metrikleri (CPU Ready, Latency) ve SNMP entegrasyonu ile proaktif izleme stratejilerini kapsar.
+
+### 16. Yükseltme (Upgrade) Metodolojisi
+vCenter ve ESXi versiyon yükseltme adımları, yükseltme sırası (interoperability) ve hata durumunda geri dönüş (rollback) planlarını detaylandırır.
+
+### 17. vSAN Derin İnceleme (Deep Dive)
+Yazılım tabanlı depolama (vSAN) mimarisi, disk grupları, ESA/OSA farkları ve politika bazlı (SPBM) depolama yönetimini kapsar.
+
+### 18. Disaster Recovery (SRM)
+Site Recovery Manager (SRM) ile felaket kurtarma orkestrasyonu, replikasyon yöntemleri ve kurtarma planlarının (Recovery Plans) oluşturulmasını detaylandırır.
+
+### 19. Gelişmiş Ağ Yönetimi (Advanced Networking)
+VDS üzerinde LACP, Network I/O Control (NIOC), Port Mirroring ve NetFlow gibi kurumsal ağ özelliklerini kapsar.
+
+### 20. GPU ve AI İş Yükleri
+NVIDIA vGPU sanallaştırma, GPU Passthrough (DirectPath I/O) ve vSphere üzerinde AI/ML iş yüklerinin optimizasyonunu içerir.
+
+### 21. Otomatik Dağıtım (Auto Deploy)
+Büyük ölçekli ortamlarda Host Profiles ve PXE tabanlı Auto Deploy ile sunucu kurulumlarının standartlaştırılmasını ve otomasyonunu anlatır.
+
+### 22. Güvenlik Sıkılaştırma (Hardening)
+VMware Security Configuration Guide standartları, STIG uyumluluğu, sertifika yönetimi ve sistem zırhlama tekniklerini detaylandırır.
+
+### 23. Operasyonel Verimlilik (Content Library & ELM)
+Şablon yönetimi (Content Library), Enhanced Linked Mode (ELM) ve politika bazlı (SPBM) depolama yönetimi ile operasyonel hızı artırma yollarını kapsar.
+
+### 24. Gelecek Nesil Mimariler (DPU & SmartNICs)
+vSphere 8 ile gelen DPU (Data Processing Unit) desteği ve altyapı servislerinin akıllı ağ kartlarına devredilmesini (Distributed Services Engine) detaylandırır.
+
+### 25. Veri Şifreleme ve KMS
+vSphere Native Key Provider, VM Encryption ve vSAN Encryption teknolojileri ile verilerin donanımsal ve yazılımsal olarak zırhlanmasını kapsar.
+
+### 26. Terraform ile vSphere (IaC)
+Altyapının kod olarak yönetilmesi (Infrastructure as Code) felsefesini, Terraform vSphere Provider kullanımını ve otomatik VM dağıtım senaryolarını içerir.
 
 ---
 

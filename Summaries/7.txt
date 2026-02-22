@@ -1,0 +1,30 @@
+==================================================
+İLERİ SEVİYE MÜHENDİSLİK VE GELECEK NESİL TEKNOLOJİLER (19-26)
+
+1. ADVANCED NETWORKING
+- LACP: Uplink'leri sanal port kanalında birleştirir.
+- NIOC: Trafik türlerine (vMotion, iSCSI) göre bant genişliği önceliği verir.
+
+2. GPU VE AI İŞ YÜKLERİ
+- NVIDIA vGPU: Fiziksel GPU'yu dilimleyerek (slicing) VM'lere dağıtır.
+- DirectPath I/O: Düşük gecikme için GPU'yu doğrudan VM'e bağlar.
+
+3. AUTO DEPLOY VE HOST PROFILES
+- Auto Deploy: Host'ların disk olmadan ağdan (PXE) açılmasıdır.
+- Host Profiles: Bir host'un ayarlarını diğer 100 host'a kopyalamaktır.
+
+4. GÜVENLİK (HARDENING)
+- Lockdown Mode: Host'a doğrudan girişi engeller.
+- KMS & Native Key Provider: VM ve vSAN şifreleme için anahtar yönetimi sağlar.
+- Trust Authority: Sadece güvenilir (attested) hostlara anahtar dağıtılmasını sağlar.
+- vTPM: Windows 11 gibi VM'lerin donanımsal güvenlik ihtiyacını karşılar.
+
+5. OPERASYONEL VERİMLİLİK
+- Content Library: Şablonları (Templates) vCenter'lar arası senkronize eder.
+- ELM (Linked Mode): Birden fazla vCenter'ı tek arayüzden yönetir.
+- vCenter Profiles: vCenter ayarlarını dışa aktarıp diğer vCenter'lara uygulamayı sağlar.
+
+6. GELECEK NESİL: DPU & TERRAFORM
+- DPU (SmartNIC): Ağ ve güvenlik yüklerini ana CPU'dan alıp ağ kartına yükler.
+- Terraform (IaC): Altyapıyı kodla (Code) kurmak ve yönetmek demektir.
+==================================================

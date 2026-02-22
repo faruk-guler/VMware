@@ -63,4 +63,8 @@ Socket × Virtual CPU = (2 socket + x10 vCPU)
 > Not: vCPU sayısının fiziksel çekirdek sayısını aşmaması önerilir — aksi halde performans düşüşü yaşanır.
 > İdeal oran: 1 fiziksel core = 1-2 vCPU (yüksek performanslı uygulamalarda 1:1 önerilir).
 
+vSPHERE WITH TANZU
+- Sanal makinelerle beraber Kubernetes Pod'larının doğrudan ESXi üzerinde çalışmasıdır.
+- Container ve VM dünyasını birleştirir.
+
 ==================================================

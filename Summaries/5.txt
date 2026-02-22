@@ -5,7 +5,7 @@
 
 - ESXi Host TL (Top Level) → 4 adet host: Host1, Host2, Host3, Host4
 - Her host, Distributed Switch (Dist-Switch) üzerinden yönetilir.
-- VM’ler — Segulanto (muhtemelen “Segregation” veya “Segmentation” anlamında) ile ayrılmıştır.
+- VM’ler — Network Segmentation (Ağ Bölümleme) ile ayrılmıştır.
 
 2. VM ve Network Yapısı
 
@@ -27,9 +27,7 @@
 - vmk3 → FT Logging (Fault Tolerance)
 - vmk4 → VSAN (Eğer kullanılıyorsa)
 
-5. VMware HCIA (Host Cluster Infrastructure Architecture)
-
-- HCIA, ESXi host’ların cluster içindeki ağ yapılandırmasını ifade eder.
+5. VMware HCI (Hyper-Converged Infrastructure) Mimari Yapısı
 - Her host’un 2 adet fiziksel NIC’i vardır:
    - Vmnic0 ve Vmnic1 → VMware HCIA için kullanılır (Management, vMotion vs.)
    - Vmnic2 ve Vmnic3 → Fiziksel adaptör (Uplink) olarak kullanılır.
@@ -42,7 +40,7 @@
 - Bu portlar, fiziksel switch’e bağlanır — trunk modda çalışır.
 - NSX, bu uplink’leri kullanarak overlay network (VXLAN) oluşturur.
 
-7. Bookben (Muhtemelen "Bookshelf" veya "Backup" anlamında)
+7. Backup (Yedekleme) Yapısı
 
 - Sanal makinelerin yedeklenmesi için kullanılan bir yapıdır.
 - NSX ile entegre olursa, mikro-segmentasyonla birlikte güvenlik politikaları uygulanabilir.

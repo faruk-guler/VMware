@@ -16,6 +16,10 @@ DRS, cluster içindeki yükü host'lar arasında dengeler.
   - *Partially Automated:* VM'in ilk açılacağı host'u seçer, ancak sonrasındaki dengelemeler için onay ister.
   - *Fully Automated:* Her şeyi otomatik yapar (Önerilen).
 
-## 3. Proactive HA ve Fault Tolerance (FT)
-- **Proactive HA:** Donanım (fan, PSU vs.) hatası sinyali aldığında VM'leri o host'tan tahliye eder.
 - **Fault Tolerance (FT):** Sıfır kesinti (Zero Downtime) sağlar. VM'in bir ikizini (shadow copy) başka bir host'ta çalıştırır. Ana VM çökerse, ikizi milisaniyeler içinde devralır.
+
+## 4. Kaynak Havuzları (Resource Pools)
+Cluster kaynaklarını (CPU/RAM) departmanlara veya projelere göre bölmek için kullanılır. "Expandable Reservation" özelliği ile dinamik kaynak paylaşımı sağlar.
+
+## 5. Predictive DRS
+vRealize Operations (vROps) ile entegre çalışarak, geçmiş verilere dayanarak gelecekteki yük artışlarını tahmin eder ve VM'leri darboğaz oluşmadan önce taşır.

@@ -55,4 +55,8 @@ vCenter Server'ın kendisinin çökmesine karşı koruma sağlar.
 - **Failover:** Active node çökerse Passive node saniyeler içinde yönetimi devralır.
 - **Gereksinim:** Self-managed bir vCenter ortamı ve vCenter HA ağı için özel bir subnet.
 
+## 6. Gelişmiş Sorun Giderme Araçları
+- **ESXTOP:** ESXi host'un kaynak kullanımını (CPU Ready, Disk Latency vb.) komut satırından anlık izlemek için kullanılır. SSH üzerinden `esxtop` komutuyla çalıştırılır.
+- **Log Analizi:** Kritik sistem logları `/var/log/vmkernel.log` dosyasında tutulur. `tail -f /var/log/vmkernel.log` komutuyla canlı izlenebilir.
+
 > **Not:** Arşiv partition'ının dolması vCenter'ın durmasına neden olmaz ancak yönetimsel işlemleri engelleyebilir.

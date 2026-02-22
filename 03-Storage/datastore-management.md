@@ -16,8 +16,13 @@ Bir iSCSI target'ı bağlamak için izlenmesi gereken adımlar:
 4. **Rescan:** Depolama bağdaştırıcılarını tarayarak LUN'ları görün.
 5. **New Datastore:** "New Datastore" sihirbazı ile VMFS bölümünü oluşturun.
 
-## 3. Best Practices (En İyi Uygulamalar)
-- **Multipathing:** Depolama erişimi için en az iki fiziksel yol (path) kullanın.
-- **Round Robin:** Yüksek performans için Native Multipathing (NMP) seçiminde "Round Robin" politikasını tercih edin.
-- **Jumbo Frames:** iSCSI ve vSAN trafiği için MTU değerini 9000 olarak ayarlayın.
 - **Disk Filling:** Datastore doluluk oranını %80-%85'in altında tutmaya özen gösterin.
+
+## 4. İleri Seviye Depolama Teknolojileri
+- **NVMe-over-Fabrics (NVMe-oF):** Geleneksel SCSI protokolüne göre çok daha yüksek IOPS ve düşük gecikme (latency) sağlar. vSphere 7.0+ ile desteklenir.
+- **vSphere Virtual Volumes (vVOLs):** Depolama yönetimini LUN bazlı olmaktan çıkarıp VM bazlı hale getirir. Storage Policy Based Management (SPBM) ile entegre çalışır.
+
+## 5. Storage DRS (SDRS) ve SIOC
+Depolama kaynaklarının otomatik yönetimi için:
+- **Storage DRS:** Birden fazla datastore'u bir "Datastore Cluster" içinde toplar. Disk doluluk oranı veya I/O gecikmesine göre VM disklerini datastore'lar arasında otomatik taşır.
+- **Storage I/O Control (SIOC):** Belirli bir VM'in veya uygulamanın depolama trafiğini diğer VM'lere karşı önceliklendirmesini sağlar (Shares/Limits).
