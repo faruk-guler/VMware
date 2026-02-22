@@ -55,4 +55,4 @@ Bu proje, VMware vSphere dünyasına dair "hiçbir eksik konu kalmaması" hedefi
 
 ---
 > [!IMPORTANT]
-> Tüm içerikler `c:\Antigravity` dizini altında sistematik olarak klasörlenmiştir. Detaylı içeriklere ve teknik rehberlere ilgili klasörler altındaki dosyalar üzerinden ulaşılabilir.
+> Tüm içerikler sistematik olarak klasörlenmiştir. Detaylı içeriklere ve teknik rehberlere ilgili klasörler altındaki dosyalar üzerinden ulaşılabilir.
